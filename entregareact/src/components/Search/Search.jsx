@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ImSearch } from "react-icons/im";
+import handleSubmit from "../../components/Fetch/Fetch";
 export const SearchContainerGlobal = styled.div`
   display: flex;
   justify-content: center;
