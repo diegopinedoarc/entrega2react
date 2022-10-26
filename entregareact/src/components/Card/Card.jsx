@@ -20,6 +20,7 @@ export const CardContainerStyled = styled.div`
   border-radius: 50px;
   box-shadow: 10px 10px 25px rgba(174, 174, 192, 0.4);
   box-shadow: -10px -10px 20px #ffffff;
+  color: red;
 `;
 
 export const CardTextContentContainerStyled = styled.div`
@@ -57,20 +58,22 @@ export const CardTypeContainerStyled = styled.div`
 const Card = (props) => {
   const { name, order, sprites, types } = props;
   return (
-    <CardContainerStyled>
-      <CardImg image={sprites?.other.home.front_default} alt={name} />
+    <>
+      <CardContainerStyled>
+        <CardImg image={sprites?.other.home.front_default} alt={name} />
 
-      <CardTextContentContainerStyled>
-        <h2>{name}</h2>
-        <h3>{order}</h3>
-      </CardTextContentContainerStyled>
-      <CardTypeContainerStyled>
-        <p>Tipo: </p>
-        {types?.map((type) => (
-          <Type key={type.slot} typeName={type.type.name} />
-        ))}
-      </CardTypeContainerStyled>
-    </CardContainerStyled>
+        <CardTextContentContainerStyled>
+          <h2>{name}</h2>
+          <h3>{order}</h3>
+        </CardTextContentContainerStyled>
+        <CardTypeContainerStyled>
+          <p>Tipo: </p>
+          {types?.map((type) => (
+            <Type key={type.slot} typeName={type.type.name} />
+          ))}
+        </CardTypeContainerStyled>
+      </CardContainerStyled>
+    </>
   );
 };
 
